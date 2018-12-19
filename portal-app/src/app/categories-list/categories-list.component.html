@@ -1,0 +1,25 @@
+<ngx-smart-modal #myModal identifier="myModal" class="nsm-dialog">
+  <br>
+  <br>
+  <div class="col-md-12">
+    <h6>List Category :</h6>
+
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th class="hidden">Id</th>
+          <th>Category Name</th>
+          <th>Select</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let category of categories | async">
+          <td class="hidden">{{category.id}}</td>
+          <td>{{category.categoryName}}</td>
+          <td><button class="btn btn-success">Add</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <button (click)="myModal.close()">Close</button>
+</ngx-smart-modal>

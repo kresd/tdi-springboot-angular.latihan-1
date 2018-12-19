@@ -1,0 +1,29 @@
+<br>
+<br>
+<div class="col-md-6">
+  <h2> Product List</h2>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th class="hidden">Id</th>
+        <th>Product Name</th>
+        <th>Description</th>
+        <th>Category</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products | async">
+        <td class="hidden">{{product.id}}</td>
+        <td>{{product.productName}}</td>
+        <td>{{product.description}}</td>
+        <td>{{product.category}}</td>
+        <td><button class="btn btn-danger" (click)="deleteProduct(product)"> Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div>
+  <button type="button" class="button btn-danger" (click)='deleteProducts()'>Delete All</button>
+</div>
